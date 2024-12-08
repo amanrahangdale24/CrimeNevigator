@@ -4,8 +4,6 @@ import streamlit as st
 
 # Page configuration
 st.set_page_config(
-    page_title="Crime Navigator App",  # App title
-    page_icon="🔍",  # App icon
     layout="wide"  # Wide layout
 )
 
@@ -40,8 +38,35 @@ option = st.sidebar.selectbox(
 
 # Home Page
 if option == "Home":
-    st.write("Welcome to the Crime Navigator App!")
-    st.write("Use the sidebar to navigate through different views of the crime data.")
+    st.markdown(
+        """
+        <div class="homepage-container">
+            <h1 class="title">Welcome to the Crime Navigator App</h1>
+            <p class="description">
+                Explore, analyze, and gain insights into crime data across states and cities in India.
+            </p>
+            <div class="features">
+                <h3>Features of this App</h3>
+                <ul>
+                    <li><strong>Crime Data Visualization</strong> View detailed crime statistics for selected regions.</li>
+                    <li><strong>Compare Crime Rates</strong> Compare crime data across districts within a state.</li>
+                </ul>
+            </div>
+            <div class="upcoming-features">
+                <h3>Upcoming Features</h3>
+                <ul>
+                    <li><strong>Danger Levels</strong> Assess the safety of cities based on reported crimes.</li>
+                    <li><strong>Women Safety Insights</strong> Analyze crimes affecting women with focused data visualizations.</li>
+                </ul>
+            </div>
+            <p class="footer">
+                Use the <strong>sidebar</strong> to navigate and explore the app’s features.
+            </p>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
 
 # Crime Data Visualization Page
 elif option == "Crime Data Visualization":
